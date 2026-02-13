@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Scrapbook Ulang Tahun Pentol</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gochi+Hand&amp;family=Permanent+Marker&amp;family=Plus+Jakarta+Sans:wght@400;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="js/tailwind-config.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="font-display text-scrapbook-ink relative">
+
+    <!-- Audio Player -->
+    <div class="fixed bottom-4 right-4 z-50">
+        <button onclick="toggleMusic()"
+            class="bg-white p-3 rounded-full shadow-lg border-2 border-black hover:scale-110 transition-transform w-12 h-12 flex items-center justify-center">
+            <span class="material-symbols-outlined" id="music-icon">music_note</span>
+        </button>
+    </div>
+    <audio id="bg-music" loop>
+        <source src="https://github.com/rafaelreis-hotmart/Audio-Sample-files/raw/master/sample.mp3" type="audio/mpeg">
+    </audio>
+
+    <main
+        class="w-full max-w-[430px] mx-auto min-h-screen bg-paper shadow-2xl relative overflow-hidden pb-20 border-x border-gray-200">
+
+        <!-- ===== BACKGROUND DECORATIONS ===== -->
+        <div class="bg-pentol cute anim-float" style="top: 60px; left: 12px; --rot: -10deg;">
+            ⚪️ <div class="bp-face">ᵔᴗᵔ</div>
+            <div class="bp-hat">🎂</div>
+        </div>
+        <div class="bg-pentol medium anim-wiggle" style="top: 90px; right: 20px; --rot: 12deg; animation-delay: 0.5s;">
+            ⚪️ <div class="bp-face">◕‿◕</div>
+        </div>
+        <div class="bg-sparkle anim-pulse" style="top: 140px; left: 60%; animation-delay: 1s;">✨</div>
+        <div class="bg-sparkle anim-float-fast" style="top: 50px; left: 75%;">🎈</div>
+        <div class="bg-pentol small anim-float-slow"
+            style="top: 280px; left: 5px; --rot: 20deg; animation-delay: 1.5s;">
+            ⚪️ <div class="bp-face">^o^</div>
+            <div class="bp-hat">🎀</div>
+        </div>
+        <div class="bg-pentol medium anim-pulse" style="top: 320px; right: 8px; animation-delay: 2s;">
+            ⚪️ <div class="bp-face">UwU</div>
+        </div>
+        <div class="bg-sparkle anim-wiggle" style="top: 350px; left: 40%; animation-delay: 0.8s;">🌟</div>
+        <div class="bg-pentol cute anim-wiggle" style="top: 520px; right: 15px; --rot: -15deg; animation-delay: 1s;">
+            ⚪️ <div class="bp-face">♥‿♥</div>
+            <div class="bp-hat">🥳</div>
+        </div>
+        <div class="bg-sparkle anim-float-slow" style="top: 490px; left: 20%; animation-delay: 2.5s;">🎉</div>
+        <div class="bg-sparkle anim-pulse" style="top: 640px; right: 30px; animation-delay: 1.2s;">💕</div>
+        <div class="bg-pentol medium anim-float-fast"
+            style="top: 800px; left: 10px; --rot: -8deg; animation-delay: 0.7s;">
+            ⚪️ <div class="bp-face">^◡^</div>
+        </div>
+        <div class="bg-pentol small anim-wiggle" style="top: 850px; right: 12px; --rot: 18deg; animation-delay: 1.8s;">
+            ⚪️ <div class="bp-face">owo</div>
+            <div class="bp-hat">🎁</div>
+        </div>
+        <div class="bg-sparkle anim-spin" style="top: 780px; left: 50%;">⭐</div>
+        <div class="bg-pentol cute anim-float-slow"
+            style="top: 1050px; right: 5px; --rot: -20deg; animation-delay: 2.2s;">
+            ⚪️ <div class="bp-face">◍•ᴗ•◍</div>
+            <div class="bp-hat">🎈</div>
+        </div>
+        <div class="bg-sparkle anim-float" style="top: 1000px; left: 35%; animation-delay: 3s;">🎊</div>
+        <div class="bg-sparkle anim-wiggle" style="top: 1150px; right: 40px; animation-delay: 0.6s;">💖</div>
+        <div class="bg-pentol medium anim-wiggle" style="top: 1350px; left: 5px; --rot: 10deg; animation-delay: 1.3s;">
+            ⚪️ <div class="bp-face">~_~</div>
+            <div class="bp-hat">🧁</div>
+        </div>
+        <div class="bg-sparkle anim-float-slow" style="top: 1300px; left: 55%; animation-delay: 1.6s;">🌸</div>
+        <div class="bg-pentol cute anim-float" style="top: 1600px; left: 10px; --rot: 15deg; animation-delay: 0.9s;">
+            ⚪️ <div class="bp-face">ʘ‿ʘ</div>
+            <div class="bp-hat">🎶</div>
+        </div>
+        <div class="bg-sparkle anim-wiggle" style="top: 1550px; left: 70%; animation-delay: 2.1s;">🎀</div>
+        <div class="bg-sparkle anim-float" style="top: 1720px; left: 25%; animation-delay: 0.2s;">✨</div>
+        <div class="bg-pentol medium anim-float-slow"
+            style="top: 1900px; right: 8px; --rot: -5deg; animation-delay: 1.4s;">
+            ⚪️ <div class="bp-face">^_^</div>
+            <div class="bp-hat">🌈</div>
+        </div>
+        <div class="bg-sparkle anim-pulse" style="top: 1850px; left: 45%; animation-delay: 1.7s;">🎂</div>
+        <div class="bg-pentol cute anim-float-fast"
+            style="top: 2150px; left: 8px; --rot: -18deg; animation-delay: 0.1s;">
+            ⚪️ <div class="bp-face">TwT</div>
+            <div class="bp-hat">💌</div>
+        </div>
+        <div class="bg-sparkle anim-float" style="top: 2100px; left: 60%; animation-delay: 3.5s;">🎉</div>
+        <div class="bg-sparkle anim-wiggle" style="top: 2280px; left: 30%; animation-delay: 0.5s;">💫</div>
+
+        <!-- Floating emojis -->
+        <div class="bg-emoji anim-float" style="top: 120px; left: 85%;">🎈</div>
+        <div class="bg-emoji small anim-bounce" style="top: 180px; right: 12%; animation-delay: 0.5s;">🌸</div>
+        <div class="bg-emoji anim-sway" style="top: 420px; left: 70%; animation-delay: 1.2s;">🌿</div>
+        <div class="bg-emoji large anim-float-slow" style="top: 650px; right: 5%; animation-delay: 2s;">🌻</div>
+        <div class="bg-emoji anim-wiggle" style="top: 820px; left: 80%; animation-delay: 0.8s;">☁️</div>
+        <div class="bg-emoji small anim-pulse" style="top: 950px; right: 15%;">🍃</div>
+        <div class="bg-emoji anim-bounce" style="top: 1180px; left: 75%; animation-delay: 1.5s;">🌷</div>
+        <div class="bg-emoji anim-float" style="top: 1420px; right: 8%; animation-delay: 2.3s;">🕊️</div>
+        <div class="bg-emoji small anim-sway" style="top: 1580px; left: 82%;">💭</div>
+        <div class="bg-emoji anim-wiggle" style="top: 1750px; right: 18%; animation-delay: 1s;">🌙</div>
+        <div class="bg-emoji large anim-float-slow" style="top: 1920px; left: 78%; animation-delay: 0.3s;">⭐</div>
+        <div class="bg-emoji anim-pulse" style="top: 2100px; right: 10%; animation-delay: 1.8s;">🌼</div>
+        <div class="bg-emoji anim-float" style="top: 250px; left: 5%;">🎉</div>
+        <div class="bg-emoji small anim-wiggle" style="top: 380px; right: 78%; animation-delay: 1.5s;">🎗️</div>
+        <div class="bg-emoji anim-bounce" style="top: 580px; left: 8%; animation-delay: 0.5s;">🌟</div>
+        <div class="bg-emoji anim-sway" style="top: 880px; right: 75%; animation-delay: 2s;">💐</div>
+        <div class="bg-emoji small anim-pulse" style="top: 1280px; right: 80%; animation-delay: 0.8s;">🍀</div>
+        <div class="bg-emoji anim-float" style="top: 1780px; right: 82%; animation-delay: 2.5s;">🌈</div>
+        <div class="bg-emoji small anim-spin" style="top: 550px; left: 92%; animation-delay: 5s;">✨</div>
+        <div class="bg-emoji anim-float" style="top: 790px; right: 88%; animation-delay: 0.6s;">🎀</div>
+        <!-- ===== END BACKGROUND ===== -->
+
+
+        <!-- Top decorations -->
+        <div class="absolute top-0 left-10 h-16 w-[2px] bg-black/40">
+            <div class="pentol-sticker top-12 -left-[22px]">
+                ⚪️ <div class="pentol-face text-[8px] top-4">ᵔᴗᵔ</div>
+                <div class="sticker-hat">🎀</div>
+            </div>
+        </div>
+        <div class="absolute top-0 right-16 h-24 w-[2px] bg-black/40">
+            <div class="pentol-sticker top-20 -left-[22px]">
+                ⚪️ <div class="pentol-face text-[8px] top-4">O.O</div>
+            </div>
+        </div>
+        <div class="absolute top-0 left-1/2 h-12 w-[2px] bg-black/40">
+            <div class="pentol-sticker top-8 -left-[22px]">
+                ⚪️ <div class="pentol-face text-[8px] top-4">^◡^</div>
+                <div class="sticker-hat">🥳</div>
+            </div>
+        </div>
+
+        <!-- ===== HEADER ===== -->
+        <header class="pt-24 px-8 text-center relative">
+            <div class="tape top-10 left-1/2 -translate-x-1/2 rotate-3 bg-yellow-100/60"></div>
+            <div class="inline-block px-4 py-2 border-2 border-black rounded-full mb-6 -rotate-2 bg-white relative">
+                <p class="text-xs font-bold uppercase tracking-widest">Ada yang perlu dibicarain...</p>
+                <div class="pentol-sticker -right-10 -top-6 scale-75">
+                    ⚪️ <div class="pentol-face text-[8px] top-4">◕‿◕</div>
+                </div>
+            </div>
+            <h1 class="text-5xl font-marker leading-none mb-4">HEY,</h1>
+            <h1 class="text-4xl font-marker leading-tight mb-6">Maaf ganggu waktu kamu...</h1>
+            <p class="font-handwritten text-2xl mb-4">Gue tau ini dadakan banget, tapi</p>
+            <p class="font-handwritten text-2xl mb-8">boleh minta waktu kamu sebentar? 🙏</p>
+
+            <div class="max-w-md mx-auto bg-yellow-50 border-2 border-black p-6 doodle-border rotate-1 mb-6">
+                <p class="font-handwritten text-lg leading-relaxed text-left">
+                    <span class="font-bold text-xl">TL;DR:</span><br>
+                    Gue bikin ini buat ngomong sesuatu. Kamu bisa pilih mau:<br><br>
+                    <span class="inline-block mr-2">📖</span> <strong>Baca dulu</strong> semua yang gue tulis (scroll ke
+                    bawah)<br>
+                    <span class="inline-block mr-2">💬</span> <strong>Langsung chat</strong> gue aja kalau mau skip<br>
+                    <span class="inline-block mr-2">⏸️</span> <strong>Nanti aja</strong>, gue ngerti kok kalau lagi
+                    sibuk
+                </p>
+            </div>
+
+            <div class="pentol-sticker top-44 right-2 rotate-12">
+                ⚪️ <div class="pentol-face text-[10px] top-4">^‿^</div>
+                <div class="absolute bottom-[-15px] font-bold text-[8px]">nervous</div>
+            </div>
+
+            <div class="absolute -bottom-16 left-1/2 -translate-x-1/2 animate-bounce opacity-60">
+                <span class="material-symbols-outlined text-3xl">keyboard_arrow_down</span>
+            </div>
+        </header>
+
+        <!-- ===== PHOTO SECTION ===== -->
+        <section class="px-8 mt-16 mb-16 relative">
+            <div class="polaroid relative mx-auto max-w-[280px] -rotate-2">
+                <div class="tape -top-4 left-1/2 -translate-x-1/2 -rotate-12 w-20 h-6"></div>
+                <div class="w-full aspect-[4/5] overflow-hidden border-2 border-gray-100 mb-2">
+                    <img alt="Yang berulang tahun" class="w-full h-full object-cover grayscale-[0.1]"
+                        src="img/gambar1.jpeg" />
+                </div>
+                <p class="font-handwritten text-center text-2xl mt-4">Foto terbaikmu! 📸</p>
+                <div class="pentol-sticker -top-8 -left-6 transform -rotate-12">
+                    ⚪️ <div class="pentol-face text-[8px] top-4">◍•ᴗ•◍</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== UCAPAN ULANG TAHUN ===== -->
+        <section class="px-8 mb-16 relative">
+            <div class="max-w-lg mx-auto bg-white border-2 border-black p-8 doodle-border -rotate-1 relative shadow-lg">
+                <div class="tape -top-3 left-1/4 rotate-6"></div>
+                <h2 class="text-3xl font-marker mb-6 text-center">Dear Putri Norhayati,</h2>
+
+                <div class="space-y-4 font-handwritten text-lg leading-relaxed">
+                    <p class="text-center"><span class="text-4xl font-marker">🎉 SELAMAT ULANG TAHUN! 🎉</span></p>
+
+                    <p>Selamat ulang tahun ya 🎉 Semoga harimu menyenangkan dan penuh hal baik.</p>
+
+                    <p>Wah sekarang sudah 23 tahun, nambah dewasa dikit nih walau masih suka bercanda 😄</p>
+
+                    <div class="bg-yellow-50 p-4 border-2 border-black rounded my-6">
+                        <p class="text-base"><span class="font-bold">Doa di Usia 23:</span></p>
+                        <ul class="text-base list-disc list-inside space-y-2 mt-2">
+                            <li>Semoga selalu sehat dan semua urusanmu dipermudah</li>
+                            <li>Semoga banyak kabar baik dan kesempatan seru datang</li>
+                            <li>Semoga makin dewasa cara mikirnya, tapi jangan makin cuek ya 😅</li>
+                        </ul>
+                    </div>
+
+                    <p class="text-center">Scroll ke bawah ya, ada yang mau aku sampein... 👇</p>
+                </div>
+
+                <div class="pentol-sticker -bottom-10 -right-6 scale-110">
+                    ⚪️ <div class="pentol-face text-[8px] top-4">^ᴗ^</div>
+                    <div class="sticker-hat">🎂</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== UCAPAN & DOA ===== -->
+        <section class="px-8 mb-16 space-y-8 relative">
+            <div class="bg-sticky-yellow p-6 doodle-border rotate-2 relative">
+                <div class="tape -top-3 left-10 rotate-12"></div>
+                <p class="font-handwritten text-xl leading-relaxed">
+                    Semoga kamu selalu sehat dan semua urusanmu dipermudah ke depannya 🙏✨
+                </p>
+                <div class="pentol-sticker -bottom-8 -left-2 rotate-6">
+                    ⚪️ <div class="pentol-face text-[8px] top-4">^◡^</div>
+                </div>
+            </div>
+
+            <div class="bg-sticky-pink p-5 doodle-border -rotate-3 relative">
+                <p class="font-handwritten text-xl leading-relaxed">
+                    Semoga tahun ini banyak kabar baik dan kesempatan seru datang ke hidup kamu 🌟
+                </p>
+                <div class="pentol-sticker -bottom-6 right-0 scale-75">
+                    ⚪️ <div class="pentol-face text-[8px] top-4">♥‿♥</div>
+                </div>
+            </div>
+
+            <div class="bg-sticky-green p-5 doodle-border rotate-1 relative">
+                <p class="font-handwritten text-xl">
+                    Semoga makin dewasa cara mikirnya, tapi jangan jadi makin cuek ya 😅
+                </p>
+                <div class="pentol-sticker -right-4 -top-8 rotate-12">
+                    ⚪️ <div class="pentol-face text-[8px] top-4">ʘ‿ʘ</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== MOMEN KITA (GALLERY) ===== -->
+        <section class="mb-16">
+            <div class="px-8 mb-8 relative">
+                <h2 class="text-3xl font-marker border-b-4 border-black inline-block pb-1">MOMEN</h2>
+                <div class="pentol-sticker top-[-20px] right-10 scale-90">
+                    ⚪️ <div class="pentol-face text-[8px] top-4">^o^</div>
+                    <div class="sticker-hat">🎩</div>
+                </div>
+            </div>
+            <div class="space-y-20 px-8">
+
+                <div class="relative">
+                    <div class="polaroid rotate-3 max-w-[260px] mx-auto">
+                        <div class="w-full aspect-square overflow-hidden border border-gray-100">
+                            <img alt="Kenangan 1" class="w-full h-full object-cover" src="img/gambar2.jpeg" />
+                        </div>
+                        <p class="font-handwritten text-center mt-4 text-xl italic"> Muka gak siap 😅
+                        </p>
+                    </div>
+                </div>
+
+                <div class="relative flex justify-end pr-4">
+                    <div class="polaroid -rotate-3 max-w-[240px]">
+                        <div class="tape top-[-10px] right-4 rotate-45 w-12 h-5"></div>
+                        <div class="w-full aspect-square overflow-hidden border border-gray-100">
+                            <img alt="Kenangan 2" class="w-full h-full object-cover" src="img/gambar3.jpeg" />
+                        </div>
+                        <p class="font-handwritten text-center mt-4 text-xl italic">Kamu emang paling ekspresif 😄</p>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="polaroid rotate-1 max-w-[280px] mx-auto">
+                        <div class="w-full aspect-square overflow-hidden border border-gray-100">
+                            <img alt="Kenangan 3" class="w-full h-full object-cover" src="img/gambar4.jpeg" />
+                        </div>
+                        <p class="font-handwritten text-center mt-4 text-xl italic">Kamu di momen agak aneh 😅</p>
+                    </div>
+                </div>
+
+                <div class="relative flex justify-start pl-4">
+                    <div class="polaroid rotate-2 max-w-[230px]">
+                        <div class="tape -top-3 left-4 -rotate-6 w-14 h-5"></div>
+                        <div class="w-full aspect-square overflow-hidden border border-gray-100">
+                            <img alt="Kenangan 4" class="w-full h-full object-cover" src="img/gambar5.jpeg" />
+                        </div>
+                        <p class="font-handwritten text-center mt-4 text-xl italic">Wajah gak siap part 2 😅</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 px-2">
+                    <div class="polaroid rotate-3">
+                        <div class="w-full aspect-square overflow-hidden border border-gray-100">
+                            <img alt="Kenangan 5" class="w-full h-full object-cover" src="img/gambar6.jpeg" />
+                        </div>
+                        <p class="font-handwritten text-center mt-2 text-sm italic">ini apa ya 😅</p>
+                    </div>
+                    <div class="polaroid -rotate-3">
+                        <div class="w-full aspect-square overflow-hidden border border-gray-100">
+                            <img alt="Kenangan 6" class="w-full h-full object-cover" src="img/gambar7.jpeg" />
+                        </div>
+                        <p class="font-handwritten text-center mt-2 text-sm italic">waktu kamu aktif dulu hehe 😅</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===== YANG MAU AKU SAMPEIN ===== -->
+        <section class="px-8 mb-16 relative">
+            <div class="mb-8 relative">
+                <h2 class="text-3xl font-marker border-b-4 border-black inline-block pb-1">YANG MAU AKU SAMPEIN</h2>
+                <div class="pentol-sticker top-[-20px] right-4 scale-90">
+                    ⚪️ <div class="pentol-face text-[8px] top-4">TwT</div>
+                    <div class="sticker-hat">💌</div>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+
+                <!-- Rasa Terima Kasih -->
+                <div class="bg-sticky-green p-6 doodle-border -rotate-1 relative">
+                    <h3 class="font-marker text-xl mb-3">Makasih ya...</h3>
+                    <p class="font-handwritten text-xl leading-relaxed">
+                        Aku juga mau bilang makasih buat semua hal yang sudah kita lewatin bareng 🙏
+                    </p>
+                    <div class="pentol-sticker -bottom-8 -right-4">
+                        ⚪️ <div class="pentol-face text-[8px] top-4">^◡^</div>
+                    </div>
+                </div>
+
+                <div class="bg-white border-2 border-black rounded-2xl p-5 rotate-1 relative shadow-lg">
+                    <p class="font-handwritten text-xl text-center">
+                        Karena tanpa sadar, kamu sudah jadi bagian dari cerita hidup aku 💛
+                    </p>
+                    <div class="pentol-sticker -top-10 left-1/2 -translate-x-1/2 scale-110">
+                        ⚪️ <div class="pentol-face text-[8px] top-4">♥‿♥</div>
+                    </div>
+                </div>
+
+                <!-- Pengakuan Jujur -->
+                <div class="bg-sticky-yellow p-6 doodle-border -rotate-2 relative">
+                    <div class="tape -top-3 right-10 -rotate-6"></div>
+                    <p class="font-handwritten text-xl leading-relaxed">
+                        Walaupun hubungan kita memang gak selalu berjalan mulus...
+                    </p>
+                </div>
+
+                <div class="bg-sticky-pink p-6 doodle-border rotate-1 relative">
+                    <p class="font-handwritten text-xl leading-relaxed">
+                        Aku sadar belakangan ini aku sering salah sikap dan kurang peka 😔
+                    </p>
+                    <div class="pentol-sticker -bottom-8 -left-4 -rotate-12">
+                        ⚪️ <div class="pentol-face text-[8px] top-4">T_T</div>
+                    </div>
+                </div>
+
+                <div class="bg-white border-2 border-black rounded-2xl p-6 -rotate-1 relative shadow-lg">
+                    <p class="font-handwritten text-xl text-center italic">
+                        Maaf ya kalau ada hal dari aku yang bikin kamu gak nyaman atau kesel 🙏
+                    </p>
+                </div>
+
+                <div class="bg-sticky-blue p-5 doodle-border rotate-2 relative">
+                    <p class="font-handwritten text-xl leading-relaxed">
+                        Bukan maksud aku buat cuek apalagi menjauh dari kamu...
+                    </p>
+                    <div class="pentol-sticker -top-8 -right-4 rotate-12">
+                        ⚪️ <div class="pentol-face text-[8px] top-4">🥺</div>
+                    </div>
+                </div>
+
+                <div class="bg-sticky-green p-5 doodle-border -rotate-1 relative">
+                    <p class="font-handwritten text-xl">
+                        Kadang aku memang tipe yang susah ngomongin perasaan...
+                    </p>
+                </div>
+
+                <div class="bg-white border-2 border-black rounded-2xl p-6 rotate-1 relative shadow-lg">
+                    <p class="font-handwritten text-xl text-center font-bold">
+                        Tapi bukan berarti aku gak peduli sama kamu 💙
+                    </p>
+                    <div class="pentol-sticker -bottom-8 right-2 scale-90">
+                        ⚪️ <div class="pentol-face text-[8px] top-4">◕ᴗ◕</div>
+                    </div>
+                </div>
+
+                <!-- Harapan ke Depan -->
+                <div class="bg-sticky-yellow p-6 doodle-border -rotate-2 relative">
+                    <div class="tape -top-3 left-12 rotate-6"></div>
+                    <p class="font-handwritten text-xl leading-relaxed">
+                        Aku pengen ke depannya komunikasi kita bisa lebih enak dan terbuka 💬
+                    </p>
+                    <div class="pentol-sticker -bottom-8 -left-2 rotate-6">
+                        ⚪️ <div class="pentol-face text-[8px] top-4">^_^</div>
+                    </div>
+                </div>
+
+                <div class="bg-sticky-pink p-5 doodle-border rotate-1 relative">
+                    <p class="font-handwritten text-xl">
+                        Biar gak ada hal yang dipendam terlalu lama ✉️
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===== PERTANYAAN JUJUR ===== -->
+        <section class="px-8 mb-16 relative">
+            <div class="max-w-lg mx-auto bg-white border-2 border-black p-8 doodle-border rotate-1 relative shadow-lg">
+                <div class="tape -top-3 right-1/4 -rotate-6"></div>
+
+                <h3 class="font-marker text-2xl mb-6 text-center">Jujur aja...</h3>
+
+                <div class="space-y-5 font-handwritten text-xl leading-relaxed">
+                    <p>Menurut kamu, sekarang kita posisinya gimana sih sebenarnya?</p>
+
+                    <p>Lagi baik-baik aja... atau kamu lagi capek sama semua ini? 🤔</p>
+
+                    <div class="bg-yellow-50 p-4 border-2 border-black rounded my-4">
+                        <p class="text-lg">Kalau mau ngobrol santai, aku siap dengerin kapan aja 🫶</p>
+                        <p class="text-lg mt-2">Gak usah sungkan atau mikir berlebihan.</p>
+                    </div>
+
+                    <p class="text-center font-bold">Kabari aku ya kalau sudah ada waktu buat ngobrol pelan-pelan 💬</p>
+                </div>
+
+                <div class="pentol-sticker -bottom-10 -left-6 -rotate-12">
+                    ⚪️ <div class="pentol-face text-[8px] top-4">(• ◡•)</div>
+                    <div class="sticker-hat">🤞</div>
+                </div>
+                <div class="pentol-sticker -top-10 -right-4 rotate-12">
+                    ⚪️ <div class="pentol-face text-[8px] top-4">ᵔᴗᵔ</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== RANGKUMAN ===== -->
+        <section class="px-8 mb-16 relative">
+            <div class="max-w-lg mx-auto bg-sticky-green border-2 border-black p-8 doodle-border -rotate-1 relative">
+                <div class="tape -top-3 left-1/4 rotate-3"></div>
+
+                <h3 class="font-marker text-2xl mb-4 text-center">📝 Rangkuman</h3>
+
+                <div class="font-handwritten text-lg leading-relaxed space-y-3">
+                    <p>✅ Selamat ulang tahun ke-23! Semoga harimu menyenangkan 🎉</p>
+                    <p>✅ Makasih buat semua yang udah kita lewatin bareng 💛</p>
+                    <p>✅ Maaf kalau aku sering salah sikap dan kurang peka 🙏</p>
+                    <p>✅ Aku peduli sama kamu, cuma kadang susah ngomong 💙</p>
+                    <p>✅ Pengen komunikasi kita lebih baik ke depannya 💬</p>
+                    <p>✅ Aku mau tau posisi kita sekarang gimana, jujur aja 🤔</p>
+                    <p>✅ Kabari aku ya kalau ada waktu buat ngobrol 🫶</p>
+                </div>
+
+                <div class="pentol-sticker -bottom-10 -right-4 rotate-6">
+                    ⚪️ <div class="pentol-face text-[8px] top-4">^ᴗ^</div>
+                    <div class="sticker-hat">📋</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FOOTER ===== -->
+        <footer class="px-8 pt-8 pb-16 text-center relative border-t-2 border-dashed border-gray-300">
+            <div class="mt-10 flex flex-col items-center gap-4">
+                <div class="flex gap-4">
+                    <div class="pentol-sticker !static scale-110">
+                        ⚪️ <div class="pentol-face text-[8px] top-4">ᵔᴥᵔ</div>
+                        <div class="sticker-hat">🐻</div>
+                    </div>
+                    <div class="pentol-sticker !static scale-110">
+                        ⚪️ <div class="pentol-face text-[8px] top-4">♥_♥</div>
+                    </div>
+                    <div class="pentol-sticker !static scale-110">
+                        ⚪️ <div class="pentol-face text-[8px] top-4">^o^</div>
+                        <div class="sticker-hat">🐱</div>
+                    </div>
+                </div>
+                <div>
+                    <p class="font-handwritten text-2xl font-bold">Selamanya &amp; Selalu</p>
+                    <p class="text-[10px] uppercase font-bold tracking-widest mt-2 opacity-60">Dibuat dengan tulus untuk
+                        hari spesialmu</p>
+                </div>
+            </div>
+            <div class="absolute -z-10 top-0 left-0 w-full h-full pointer-events-none opacity-10">
+                <span class="material-symbols-outlined absolute top-10 left-5 text-4xl">favorite</span>
+                <span class="material-symbols-outlined absolute top-[20%] right-5 text-4xl">star</span>
+                <span class="material-symbols-outlined absolute top-[40%] left-8 text-3xl">cloud</span>
+                <span class="material-symbols-outlined absolute top-[60%] right-10 text-5xl">auto_awesome</span>
+                <span class="material-symbols-outlined absolute bottom-20 left-10 text-4xl">celebration</span>
+                <span class="material-symbols-outlined absolute bottom-40 right-12 text-3xl">cake</span>
+            </div>
+        </footer>
+
+    </main>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>

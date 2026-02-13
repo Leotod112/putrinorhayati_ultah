@@ -1,0 +1,159 @@
+:root {
+    --border-width: 2.5px;
+}
+body {
+    background-color: #f0ede5;
+    background-image: radial-gradient(#d1cfc7 1px, transparent 1px);
+    background-size: 24px 24px;
+    min-height: max(884px, 100dvh);
+}
+.paper-texture {
+    background-color: #fdfaf1;
+    position: relative;
+}
+.doodle-border {
+    border: var(--border-width) solid #1a1a1a;
+    box-shadow: 4px 4px 0px 0px #1a1a1a;
+}
+.tape {
+    position: absolute;
+    width: 60px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(1px);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    z-index: 20;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+.polaroid {
+    background: white;
+    padding: 12px 12px 48px 12px;
+    border: 2px solid #1a1a1a;
+    box-shadow: 8px 8px 0px rgba(0,0,0,0.08);
+    position: relative;
+    z-index: 10;
+}
+.pentol-sticker {
+    font-size: 44px;
+    line-height: 1;
+    user-select: none;
+    position: absolute;
+    z-index: 30;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(2px 2px 0px rgba(0,0,0,0.1));
+}
+.pentol-face {
+    position: absolute;
+    font-weight: 900;
+    font-family: sans-serif;
+    letter-spacing: -1px;
+    pointer-events: none;
+}
+.sticker-hat {
+    position: absolute;
+    top: -12px;
+    font-size: 20px;
+}
+
+/* Floating pentol background decorations */
+.bg-pentol {
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.12;
+    font-size: 36px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bg-pentol .bp-face {
+    position: absolute;
+    font-weight: 900;
+    font-family: sans-serif;
+    font-size: 7px;
+    letter-spacing: -1px;
+    top: 4px;
+}
+.bg-pentol .bp-hat {
+    position: absolute;
+    top: -10px;
+    font-size: 16px;
+}
+.bg-pentol.cute { opacity: 0.15; }
+.bg-pentol.medium { opacity: 0.1; font-size: 28px; }
+.bg-pentol.medium .bp-face { font-size: 6px; top: 3px; }
+.bg-pentol.small { opacity: 0.08; font-size: 22px; }
+.bg-pentol.small .bp-face { font-size: 5px; top: 2px; }
+
+/* Animations */
+@keyframes floatY {
+    0%, 100% { transform: translateY(0px) rotate(var(--rot, 0deg)); }
+    50% { transform: translateY(-12px) rotate(var(--rot, 0deg)); }
+}
+@keyframes wiggle {
+    0%, 100% { transform: rotate(var(--rot, 0deg)); }
+    25% { transform: rotate(calc(var(--rot, 0deg) + 8deg)); }
+    75% { transform: rotate(calc(var(--rot, 0deg) - 8deg)); }
+}
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+}
+@keyframes spin-slow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+@keyframes bounce {
+    0%, 100% { transform: translateY(0px) rotate(var(--rot, 0deg)); }
+    50% { transform: translateY(-8px) rotate(var(--rot, 0deg)); }
+}
+@keyframes sway {
+    0%, 100% { transform: translateX(0px) rotate(var(--rot, 0deg)); }
+    50% { transform: translateX(10px) rotate(var(--rot, 0deg)); }
+}
+
+.anim-float { animation: floatY 4s ease-in-out infinite; }
+.anim-float-slow { animation: floatY 6s ease-in-out infinite; }
+.anim-float-fast { animation: floatY 3s ease-in-out infinite; }
+.anim-wiggle { animation: wiggle 3s ease-in-out infinite; }
+.anim-pulse { animation: pulse 3s ease-in-out infinite; }
+.anim-spin { animation: spin-slow 20s linear infinite; }
+.anim-bounce { animation: bounce 2s ease-in-out infinite; }
+.anim-sway { animation: sway 4s ease-in-out infinite; }
+
+/* Confetti / sparkles */
+.bg-sparkle {
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.12;
+    font-size: 18px;
+}
+
+/* Funny floating text and random emojis */
+.bg-emoji {
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.15;
+    font-size: 24px;
+}
+.bg-emoji.large { font-size: 32px; opacity: 0.18; }
+.bg-emoji.small { font-size: 16px; opacity: 0.1; }
+
+.bg-text {
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.08;
+    font-family: 'Gochi Hand', cursive;
+    font-size: 12px;
+    color: #1a1a1a;
+    white-space: nowrap;
+    transform: rotate(var(--rot, 0deg));
+}
+.bg-text.medium { font-size: 14px; opacity: 0.1; }
+.bg-text.large { font-size: 16px; opacity: 0.12; }
